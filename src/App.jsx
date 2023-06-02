@@ -1,57 +1,30 @@
-/** @jsxImportSource @emotion/react */
+import logo from './logo.svg';
+import './App.css';
+import { style } from './styles';
+import Child, {Child1} from './Child';
 
-import React from 'react';
-import './styles.css';
-import { MyButton, MyContainer } from './App.styled';
-import { css, jsx } from '@emotion/react';
-import styled from '@emotion/styled';
-
-const EmotionButton = styled.button`
-  padding: 32px;
-  background-color: hotpink;
-  font-size: 24px;
-  border-radius: 4px;
-  color: black;
-  font-weight: bold;
-  &:hover {
-    color: white;
-  }
-`;
-
-export default function App() {
+function App() {
   return (
-    <>
-      <MyContainer>
-        <MyButton bg="blue">My Button</MyButton>
-        <MyButton bg="red">My Button</MyButton>
-        <MyButton bg="green">My Button</MyButton>
-        <div>
-          <button
-            css={css`
-              padding: 32px;
-              background-color: hotpink;
-              font-size: 24px;
-              border-radius: 4px;
-              &:hover {
-                color: red;
-              }
-            `}
-          >
-            Hover to change color.
-          </button>
-          <button
-            css={{
-              padding: '32px',
-              backgroundColor: 'hotpink',
-              fontSize: '24px',
-              borderRadius: '4px',
-            }}
-          >
-            Hover to change color.
-          </button>
-          <EmotionButton>My Emotion Button</EmotionButton>
-        </div>
-      </MyContainer>
-    </>
+    <div className="App">
+      <header className="App-header">
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <p style={style.paragraph}>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <p style={style.another}>This should be blue</p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+        <Child />
+        <Child1 />
+      </header>
+    </div>
   );
 }
+
+export default App;
